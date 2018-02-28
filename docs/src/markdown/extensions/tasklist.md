@@ -63,14 +63,28 @@ If `custom_checkbox` is enabled the structure will be as follows:
 </ul>
 ```
 
-Classes               | Description
---------------------- | ------------
-`task-list`           | Attached to either the `ul` or `ol` tag and represents the entire list element.
-`task-list-item`      | This is attached the `li` tag and represents an item in the list.
-`task-list-control`   | This is attached to the `label` tag and represents the control object.
-`task-list-indicator` | This is attached to the `span` directly following the input and is used to style the visual indicator.
+If `clickable_checkbox` is enabled checkboxes will be enabled:
 
-??? settings "Basic Tasklist CSS"
+```html
+<ul class="task-list">
+    <li class="task-list-item">
+        <label class="task-list-control">
+            <input type="checkbox" checked="">
+            <span class="task-list-indicator"></span>
+        </label>
+        item 1
+    </li>
+</ul>
+```
+
+| Classes               | Description                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------ |
+| `task-list`           | Attached to either the `ul` or `ol` tag and represents the entire list element.                        |
+| `task-list-item`      | This is attached the `li` tag and represents an item in the list.                                      |
+| `task-list-control`   | This is attached to the `label` tag and represents the control object.                                 |
+| `task-list-indicator` | This is attached to the `span` directly following the input and is used to style the visual indicator. |
+
+### settings "Basic Tasklist CSS"
 
     In order to style these we mainly remove the list type style and adjust the margins to align with normal list styles.
 
@@ -85,7 +99,7 @@ Classes               | Description
     }
     ```
 
-??? settings "Custom Tasklist CSS"
+### settings "Custom Tasklist CSS"
 
     If custom check box icons are desired, custom styles can be used to give a unique look to the check marks.  Below is a very simple CSS example that creates a light gray square with rounded corners and displays a green Unicode check mark when the control is checked.  This can be adapted to use web fonts, images, etc.
 
@@ -141,9 +155,10 @@ Classes               | Description
 
 ## Options
 
-Option            | Type | Default      | Description
------------------ | ---- | ------------ | ------------
-`custom_checkbox` | bool | `#!py3 False` | Generate task lists in such a way as to allow for styling the check box with CSS.
+| Option               | Type | Default       | Description                                                                       |
+| -------------------- | ---- | ------------- | --------------------------------------------------------------------------------- |
+| `custom_checkbox`    | bool | `#!py3 False` | Generate task lists in such a way as to allow for styling the check box with CSS. |
+| `clickable_checkbox` | bool | `#!py3 False` | Enable user to interact with checkboxes.                                          |
 
 
 --8<-- "abbr.md"
